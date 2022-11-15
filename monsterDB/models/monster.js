@@ -7,4 +7,10 @@ let monsterModel = mongoose.Schema({
     locale: String,
     description: String,
     difficulty: Number
-})
+    },
+    {
+        collection: "monster"
+    }
+);
+
+module.exports = mongoose.model("monster", monsterModel);

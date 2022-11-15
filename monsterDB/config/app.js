@@ -22,6 +22,7 @@ mongDB.once('open', ()=> {
 
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
+let monsterRouter = require('../routes/monster');
 
 let app = express();
 
@@ -38,6 +39,8 @@ app.use(express.static(path.join(__dirname, 'node_modules')));
 
 app.use('/', indexRouter); // localhost:3000
 app.use('/users', usersRouter); // localhost:3000/users
+app.use('/monster-list', monsterRouter); // localhost:3000/monster-list
+
 
 // CATCH 404 ERRORS AND FORWARD TO ERROR
 app.use(function(req, res, next) {
