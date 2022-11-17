@@ -17,7 +17,6 @@ router.get('/',(req,res,next)=> {
         }
         else
         {
-            // console.log(monsterList)
             res.render('monster/read', {
                 title: 'Monster List', 
                 MonsterList: monsterList
@@ -49,7 +48,7 @@ router.post('/create',(req,res,next)=> {
         }
         else
         {
-            res.redirect('/monster/list');
+            res.redirect('/monster/read');
         }
     })
 });
