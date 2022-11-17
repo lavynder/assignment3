@@ -1,61 +1,68 @@
 <!-- REFERENCED FROM THE PROFESSOR AHMED'S VIDEOS -->
 
 <%- include ('../partials/header.ejs') %>
-<%- include ('../partials/main_nav.ejs') %>
 
-<!-- Main Content -->
-<main>
-  <div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <div class="row">
-        <div class="col-md-offset-3 col-md-10">
-            <h1> <%- title %> </h1>
-            <a href="/monster-list/create" class="btn btn-primary" role="button">
-              <i class="fas fa-plus-circle"> </i> Add a monster
-            </a>
-            <br>
-            <br>
+    <!-- Main Content -->
+    <main>
+      <div class="jumbotron jumbotron-fluid bg-dark text-white w-100">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-offset-3 col-md-10">
+              <h1>
+                <%- title %>
+              </h1>
+              <a href="/monster-list/create" class="btn btn-secondary" role="button">
+                <i class="fas fa-plus-circle"> </i> Add a monster
+              </a>
+              <br>
+              <br>
 
-            <table class="table table-bordered table-striped table-hover">
+              <table class="table table-dark
+            table-striped table-hover table-bordered">
                 <tr class="d-flex">
                   <th class="text-center col-2">Name</th>
                   <th class="text-center col-2">Locale</th>
                   <th class="text-center col-5">Description</th>
                   <th class="text-center col-2">Difficulty</th>
-                  <th class="text-center col-2"></th>
-                  <th class="text-center col-2"></th>
+                  <th class="text-center col-2">Edit</th>
+                  <th class="text-center col-2">Delete</th>
                 </tr>
                 <!-- REPEATING TEMPLATE -->
-                <% for(let count=0; count < MonsterList.length; count++) { %> 
+                <% for(let count=0; count < MonsterList.length; count++) { %>
                   <tr class="d-flex">
-                    <td class="text-center col-2"> <%= MonsterList[count].name %> </td>
-                    <td class="text-center col-2"> <%= MonsterList[count].locale %> </td>
-                    <td class="text-center col-5"> <%= MonsterList[count].description %> </td>
+                    <td class="text-center col-2">
+                      <%= MonsterList[count].name %>
+                    </td>
+                    <td class="text-center col-2">
+                      <%= MonsterList[count].locale %>
+                    </td>
+                    <td class="text-center col-5">
+                      <%= MonsterList[count].description %>
+                    </td>
 
                     <!-- IN MONSTER HUNTER, DIFFICULTY IS REPRESENTED IN STARS example: '5 STAR DIFFICULTY' -->
-                    <td class="text-center col-2"> <%= MonsterList[count].difficulty %> &#9733; </td>
-                    
+                    <td class="text-center col-2">
+                      <%= MonsterList[count].difficulty %> &#9733;
+                    </td>
+
                     <!-- UPDATE AND DELETE BUTTONS -->
-                    <td class="text-center col-2"> 
-                      <a href="/monster-list/update/<%= MonsterList[count]._id %>"
-                        class="btn btn-primary">    
-                        <i class="fas fa-pencil-alt"> </i> Edit </a>
+                    <td class="text-center col-2">
+                      <a href="/monster-list/update/<%= MonsterList[count]._id %>" class="btn w-100">
+                        <i class="fas fa-pencil-alt text-white"> </i></a>
                     </td>
-                    <td class="text-center col-2">  
-                      <a href="/monster-list/delete/<%= MonsterList[count]._id %>"
-                        class="btn btn-danger">
-                        <i class="fas fa-trash-alt"> </i> Delete </a>
+                    <td class="text-center col-2">
+                      <a href="/monster-list/delete/<%= MonsterList[count]._id %>" class="btn btn-danger w-75">
+                        <i class="fas fa-trash-alt"> </i></a>
                     </td>
-                  </tr>  
-                <% } %>
+                  </tr>
+                  <% } %>
 
-            </table>
+              </table>
 
+            </div>
+          </div>
         </div>
-    </div>
-  </div>
-</div>
-</main>
+      </div>
+    </main>
 
-<%- include ('../partials/bottom_nav.ejs') %>
-<%- include ('../partials/footer.ejs') %>
+    <%- include ('../partials/footer.ejs') %>
