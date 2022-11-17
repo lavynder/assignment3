@@ -1,0 +1,42 @@
+<!-- REFERENCED FROM THE PROFESSOR AHMED'S VIDEOS -->
+
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/main_nav.ejs') %>
+<!-- Main Content -->
+<main>
+  <!-- <div class="jumbotron jumbotron-fluid"> -->
+  <div class="container">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-8">
+            <h1> <%- title %> </h1>
+            <br>
+
+            <table class="table table-bordered table-striped table-hover">
+                <tr class="d-flex">
+                  <th class="text-center col-2">Name</th>
+                  <th class="text-center col-2">Locale</th>
+                  <th class="text-center col-6">Description</th>
+                  <th class="text-center col-2">Difficulty</th>
+                </tr>
+                <!-- REPEATING TEMPLATE -->
+                <% for(let count=0; count < MonsterList.length; count++) { %> 
+                  <tr class="d-flex">
+                    <td class="text-center col-2"> <%= MonsterList[count].name %> </td>
+                    <td class="text-center col-2"> <%= MonsterList[count].locale %> </td>
+                    <td class="text-center col-6"> <%= MonsterList[count].description %> </td>
+
+                    <!-- IN MONSTER HUNTER, DIFFICULTY IS REPRESENTED IN STARS example: '5 STAR DIFFICULTY' -->
+                    <td class="text-center col-2"> <%= MonsterList[count].difficulty %> &#9733; </td>
+                  </tr>  
+                <% } %>
+
+            </table>
+
+        </div>
+    </div>
+  </div>
+<!-- </div> -->
+</main>
+
+<%- include ('partials/bottom_nav.ejs') %>
+<%- include ('partials/footer.ejs') %>

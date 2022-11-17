@@ -16,7 +16,7 @@
           <% } else { %>
             <a class="nav-link" href="/home">
           <% } %>
-            <i class="fa-solid fa-lg fa-house-user"></i> Home</a>
+            <i class="fa-solid fa-lg fa-house-user" aria-hidden="true"></i> Home</a>
           </li>
   
           <li class="nav-item">
@@ -25,7 +25,7 @@
           <% } else { %>
             <a class="nav-link" href="/about">
           <% } %>
-            <i class="fa-sharp fa-solid fa-circle-info"></i>
+            <i class="fa-sharp fa-solid fa-circle-info" aria-hidden="true"> </i>
              About Me</a>
           </li>        
   
@@ -35,7 +35,7 @@
           <% } else { %>
             <a class="nav-link" href="/projects">
           <% } %>
-            <i class="fa-brands fa-elementor"></i>
+            <i class="fa-brands fa-elementor" aria-hidden="true"></i>
              Projects</a>
           </li>
      
@@ -45,9 +45,19 @@
           <% } else { %>
             <a class="nav-link" href="/contact">
           <% } %>
-            <i class="fa-solid fa-phone"></i> 
+            <i class="fa-solid fa-phone" aria-hidden="true"></i> 
             Contact Me</a>
           </li>
+
+          <li class="nav-item">
+            <% if (title == "Monster List") { %>
+              <a class="nav-link active" href="/monster-list">
+            <% } else { %>
+              <a class="nav-link" href="/monster-list">
+            <% } %>
+            <i class="fa fa-paw" aria-hidden="true"></i>
+              Monster List</a>
+            </li>
   
       </div>
     </div>

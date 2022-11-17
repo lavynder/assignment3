@@ -5,6 +5,8 @@ let mongoose = require('mongoose');
 // CONNECT TO monster MODEL
 let Monster = require('../models/monster');
 
+/* CRUD OPERATIONS*/
+
 // READ OPERATION
 // GET ROUTE FOR monster LIST
 router.get('/',(req,res,next)=> {
@@ -22,6 +24,35 @@ router.get('/',(req,res,next)=> {
             });
         }
     }); 
+});
+
+// ADD OPERATION
+// GET ROUTE FOR DISPLAYING THE ADD PAGE
+router.get('/add',(req,res,next)=> {
+
+});
+
+// POST ROUTE FOR PROCESSING THE ADD OPERATION
+router.post('/add',(req,res,next)=> {
+
+});
+
+
+// EDIT OPERATION
+// GET ROUTE FOR DISPLAYING THE UPDATE PAGE
+router.get('/edit/:id',(req,res,next)=> {
+
+});
+
+// POST ROUTE FOR PROCESSING THE UPDATE OPERATION
+router.post('/edit/:id',(req,res,next)=> {
+
+});
+
+// DELETE OPERATION
+// PERFORM THE DELETE OPERATION
+router.get('/delete/:id',(req,res,next)=> {
+
 });
 
 module.exports = router;
