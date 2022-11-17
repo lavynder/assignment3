@@ -48,7 +48,7 @@ router.post('/create',(req,res,next)=> {
         }
         else
         {
-            res.redirect('/monster/read');
+            res.redirect('/monster-list');
         }
     })
 });
@@ -92,7 +92,7 @@ router.post('/update/:id',(req,res,next)=> {
         }
         else
         {
-            res.redirect('/monster/read')
+            res.redirect('/monster-list')
         }
     });
 });
@@ -109,7 +109,7 @@ router.get('/delete/:id',(req,res,next)=> {
         }
         else
         {
-            res.redirect('/monster/read')
+            res.redirect('/monster-list')
         }
         
     });
