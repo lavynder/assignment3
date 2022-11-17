@@ -26,8 +26,8 @@ router.get('/',(req,res,next)=> {
     }); 
 });
 
-// ADD OPERATION
-// GET ROUTE FOR DISPLAYING THE ADD PAGE
+// CREATE OPERATION
+// GET ROUTE FOR DISPLAYING THE CREATE PAGE
 router.get('/create',(req,res,next)=> {
     res.render('monster/create', 
     {title: 'Create Monster'});
@@ -55,20 +55,65 @@ router.post('/create',(req,res,next)=> {
 });
 
 
-// EDIT OPERATION
+// UPDATE OPERATION
 // GET ROUTE FOR DISPLAYING THE UPDATE PAGE
-router.get('/edit/:id',(req,res,next)=> {
-
+router.get('/update/:id',(req,res,next)=> {
+    let id = req.params.id;
+    Monster.findById(id, (err, monsterUpdate) =>{
+        if(err)
+        {
+            console.log(err);
+            res.end(err);
+        }
+        else
+        {
+            res.render('/monster/update', 
+            {title: 'Update Monster', 
+            monster: monsterUpdate
+            });
+        }
+    });
 });
 
 // POST ROUTE FOR PROCESSING THE UPDATE OPERATION
-router.post('/edit/:id',(req,res,next)=> {
-
+router.post('/update/:id',(req,res,next)=> {
+    let id = req.params.id;
+    let updateMonster = Monster({
+        '_id':id,
+        'name':req.body.name,
+        'locale':req.body.locale,
+        'description':req.body.description,
+        'difficulty':req.body.difficulty
+    });
+    Monster.updateOne({_id:id}, updateMonster, (err) =>{
+        if(err)
+        {
+            console.log(err);
+            res.end(err);
+        }
+        else
+        {
+            res.redirect('/monster/read')
+        }
+    });
 });
 
 // DELETE OPERATION
 // PERFORM THE DELETE OPERATION
 router.get('/delete/:id',(req,res,next)=> {
+    let id = req.params.id;
+    Monster.remove({_id:id}, (err) =>{
+        if(err)
+        {
+            console.log(err);
+            res.end(err);
+        }
+        else
+        {
+            res.redirect('/monster/read')
+        }
+        
+    });
 
 });
 
