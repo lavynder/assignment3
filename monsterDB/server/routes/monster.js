@@ -18,7 +18,7 @@ router.get('/',(req,res,next)=> {
         else
         {
             // console.log(monsterList)
-            res.render('monster', {
+            res.render('monster/read', {
                 title: 'Monster List', 
                 MonsterList: monsterList
             });
@@ -28,13 +28,30 @@ router.get('/',(req,res,next)=> {
 
 // ADD OPERATION
 // GET ROUTE FOR DISPLAYING THE ADD PAGE
-router.get('/add',(req,res,next)=> {
-
+router.get('/create',(req,res,next)=> {
+    res.render('monster/create', 
+    {title: 'Create Monster'});
 });
 
 // POST ROUTE FOR PROCESSING THE ADD OPERATION
-router.post('/add',(req,res,next)=> {
-
+router.post('/create',(req,res,next)=> {
+    let newMonster = Monster ({
+        'name':req.body.name,
+        'locale':req.body.locale,
+        'description':req.body.description,
+        'difficulty':req.body.difficulty
+    })
+    Monster.create(newMonster, (err, Monster) => {
+        if(err)
+        {
+            console.log(err);
+            res.end(err);
+        }
+        else
+        {
+            res.redirect('/monster/list');
+        }
+    })
 });
 
 
