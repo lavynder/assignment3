@@ -8,14 +8,18 @@ let Monster = require('../models/monster');
 // READ OPERATION
 // GET ROUTE FOR monster LIST
 router.get('/',(req,res,next)=> {
-    Monster.find((err, MonsterList)=> {
+    Monster.find((err, monsterList)=> {
         if(err)
         {
             return console.log(err);
         }
         else
         {
-            console.log(MonsterList);
+            // console.log(monsterList)
+            res.render('monster', {
+                title: 'Monster List', 
+                MonsterList: monsterList
+            });
         }
     }); 
 });
