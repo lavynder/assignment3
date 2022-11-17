@@ -1,22 +1,31 @@
 <!-- REFERENCED FROM THE PROFESSOR AHMED'S VIDEOS -->
 
 <%- include ('../partials/header.ejs') %>
-    <%- include ('../partials/main_nav.ejs') %>
-
         <!-- Main Content -->
         <main>
-            <div class="container container-fluid text-center">
+            <div class="jumbotron jumbotron-fluid w-100 h-100 position-fixed">
+                <video autoplay muted loop id="fogBackground">
+                    <source src="../../../Assets/videos/fogVideo.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="position-fixed w-100 text-center">
+                <br>
+                <br>
+                <br>
+                <br>
                 <br>
                 <a href="../monster-list" class="btn btn-primary btn-lg">
                     <i class="fa fa-paw"> </i> Click here to go to the database! </a>
+                
+                
+                
                 <br>
                 <br>
-                <div class="jumbotron jumbotron-fluid text-center">
+                    <div class="jumbotron jumbotron-fluid text-center">
                     <img class="rounded-circle shadow-4-strong
                     img-fluid img-thumbnail border-dark
-                    w-50 h-50" 
-                    src="../../../Assets/images/gMagala2.png"
-                    alt="Gore Magala">
+                    w-25 h-25" src="../../../Assets/images/gMagala2.png" alt="Gore Magala">
                 </div>
             </div>
             </div>
