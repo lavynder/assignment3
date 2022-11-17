@@ -66,7 +66,7 @@ router.get('/update/:id',(req,res,next)=> {
         }
         else
         {
-            res.render('/monster/update', 
+            res.render('monster/update', 
             {title: 'Update Monster', 
             monster: monsterUpdate
             });
