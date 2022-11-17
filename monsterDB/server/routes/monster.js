@@ -39,7 +39,7 @@ router.post('/create',(req,res,next)=> {
         'locale':req.body.locale,
         'description':req.body.description,
         'difficulty':req.body.difficulty
-    })
+    });
     Monster.create(newMonster, (err, Monster) => {
         if(err)
         {
