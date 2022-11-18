@@ -1,6 +1,7 @@
 <%- include ('../partials/header.ejs') %>
 
     <main>
+        <!-- BACKGROUND FOR THE WEBSITE -->
         <div class="jumbotron jumbotron-fluid w-100 h-100 position-fixed">
             <video autoplay muted loop id="fogBackground">
                 <source src="../../../Assets/videos/fogVideo.mp4" type="video/mp4">
@@ -13,9 +14,12 @@
             <div class="container position-relative start-0 pt-5">
                 <div class="row">
                     <div class="col-md-offset-3 col-md-6 pt-3">
+                        <!-- TITLE FOR THE PAGE -->
                         <h1>
                             <%= title %>
                         </h1>
+                        
+                        <!-- FORM TO GATHER DATA FORM THE USER -->
                         <form class="form" method="post">
 
                             <div class="form-group">
@@ -43,11 +47,14 @@
                                     placeholder="Enter the Monster's difficulty" name="difficulty" required>
                             </div>
                             <br>
+                            
+                            <!-- SUBMIT BUTTON -->
                             <button class="btn btn-secondary" type="submit">
                                 <i class="fas fa-edit"> </i>
                                 Submit
                             </button>
 
+                            <!-- CANCEL BUTTON -->
                             <a href="/monster-list" class="btn btn-warning">
                                 <i class="fas fa-undo"></i>
                                 Cancel

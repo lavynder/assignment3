@@ -2,6 +2,9 @@
 (function () {
     function Start() {
         console.log("App Started");
+        
+        // IF THE USER WANTS TO DELETE SOMETHING, 
+        // THE WEBSITE ASKS THE USER FOR CONFIRMATION
         let deleteButtons = document.querySelectorAll('.btn-danger');
         for (button of deleteButtons) {
             button.addEventListener('click', (event) => {
