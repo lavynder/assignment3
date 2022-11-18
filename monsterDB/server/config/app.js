@@ -19,7 +19,7 @@ mongDB.once('open', ()=> {
 });
 
 
-
+// SETTING UP THE REQUIRED ROUTERS
 let indexRouter = require('../routes/index');
 let monsterRouter = require('../routes/monster');
 
