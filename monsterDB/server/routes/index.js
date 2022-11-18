@@ -1,27 +1,13 @@
 // REFERENCED FROM THE PROFESSOR AHMED'S VIDEOS 
 
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+let router = express.Router();
+let indexController = require('../controller/index');
 
 /* BY DEFAULT, GET THE Home PAGE */
-router.get('/', function(req, res, next) {
-  res.render('pages/home', { 
-    title: 'Home'
-  });
-});
+router.get('/', indexController.displayHomePage);
 
 /* GET THE Home PAGE */
-router.get('/home', function(req, res, next) {
-  res.render('pages/home', {
-    title: "Home"
-  });
-});
-
-/* GET THE About ME PAGE */
-router.get('/about', function(req, res, next) {
-  res.render('pages/about', { 
-    title: 'About Monster Hunter'
-  });
-});
+router.get('/home', indexController.displayHomePage);
 
 module.exports = router;
