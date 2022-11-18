@@ -1,59 +1,63 @@
 <%- include ('../partials/header.ejs') %>
-<%- include ('../partials/main_nav.ejs') %>
 
-<!-- CONTENT FOR CREATE PAGE -->
-<div class="container">
-    <div class="row">
-        <div class="col-md-offset-3 col-md-6">
-            <h1><%= title %> </h1>
-            <form class="form" method="post">
-                
-                <div class="form-group">
-                    <label for=""> Monster Name </label>
-                    <input type="text" class="form-control"
-                    id="nameTextField"
-                    placeholder="Enter the Monster's name"
-                    name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for=""> Locale </label>
-                    <input type="text" class="form-control"
-                    id="localeTextField"
-                    placeholder="Enter the Monster's locale"
-                    name="locale" required> </input>
-                </div>
-
-                <div class="form-group">
-                    <label for=""> Description </label>
-                    <textarea type="text" class="form-control"
-                    id="descTextField"
-                    placeholder="Enter the Monster's description"
-                    name="description" required> </textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for=""> Difficulty </label>
-                    <input type="number" class="form-control"
-                    id="diffTextField"
-                    placeholder="Enter the Monster's difficulty"
-                    name="difficulty" required>
-                </div>
-                <br>
-                <button class="btn btn-primary" type="submit">
-                    <i class="fas fa-edit"> </i> 
-                    Submit
-                </button>
-
-                <a href="/monster-list" class="btn btn-warning">
-                    <i class="fas fa-undo"></i>
-                    Cancel
-                </a>
-
-            </form>
+    <main>
+        <div class="jumbotron jumbotron-fluid w-100 h-100 position-fixed">
+            <video autoplay muted loop id="fogBackground">
+                <source src="../../../Assets/videos/fogVideo.mp4" type="video/mp4">
+            </video>
         </div>
-    </div>
-</div>
 
-<%- include ('../partials/bottom_nav.ejs') %>
-<%- include ('../partials/footer.ejs') %>
+        <!-- CONTENT FOR CREATE PAGE -->
+        <div class="jumbotron jumbotron-fluid text-white position-fixed w-100">
+
+            <div class="container position-relative start-0 pt-5">
+                <div class="row">
+                    <div class="col-md-offset-3 col-md-6 pt-3">
+                        <h1>
+                            <%= title %>
+                        </h1>
+                        <form class="form" method="post">
+
+                            <div class="form-group">
+                                <label for=""> Monster Name </label>
+                                <input type="text" class="form-control" id="nameTextField"
+                                    placeholder="Enter the Monster's name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for=""> Locale </label>
+                                <input type="text" class="form-control" id="localeTextField"
+                                    placeholder="Enter the Monster's locale" name="locale" required> </input>
+                            </div>
+
+                            <div class="form-group">
+                                <label for=""> Description </label>
+                                <textarea type="text" class="form-control" id="descTextField"
+                                    placeholder="Enter the Monster's description" name="description"
+                                    required> </textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for=""> Difficulty </label>
+                                <input type="number" class="form-control" id="diffTextField"
+                                    placeholder="Enter the Monster's difficulty" name="difficulty" required>
+                            </div>
+                            <br>
+                            <button class="btn btn-secondary" type="submit">
+                                <i class="fas fa-edit"> </i>
+                                Submit
+                            </button>
+
+                            <a href="/monster-list" class="btn btn-warning">
+                                <i class="fas fa-undo"></i>
+                                Cancel
+                            </a>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <%- include ('../partials/footer.ejs') %>
